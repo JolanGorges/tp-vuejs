@@ -1,0 +1,32 @@
+[
+  {
+    "id": "aa5dc72c-53a2-44a5-9464-82332ce58e48",
+    "prenom": "Jean",
+    "nom": "Dupont",
+    "fonction": "Directeur",
+    "telephone": "01 23 45 67 89",
+    "email": "jean.dupont@example.com",
+    "entreprise": "Société Générale",
+    "adresse1": "29 rue de la Paix",
+    "adresse2": "",
+    "codePostal": "75001",
+    "ville": "Paris",
+    "pays": "France",
+    "dateAjout": "2019-01-01"
+  },
+  {
+    "id": "b5c1b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
+    "prenom": "Paul",
+    "nom": "Durand",
+    "fonction": "Directeur",
+    "telephone": "01 23 45 67 89",
+    "email": "paul.durand@example.com",
+    "entreprise": "Crédit Agricole",
+    "adresse1": "55 rue du stade",
+    "adresse2": "",
+    "codePostal": "57000",
+    "ville": "Metz",
+    "pays": "France",
+    "dateAjout": "2021-01-01"
+  }
+]

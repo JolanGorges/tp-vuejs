@@ -16,6 +16,11 @@ const router = createRouter({
       name: 'bills',
       component: () => import('../views/BillsView.vue')
     },
+    {
+      path: '/clients',
+      name: 'clients',
+      component: () => import('../views/ClientsView.vue')
+    },
     // l'ordre de déclaration des routes est important,
     // car c'est l'ordre dans lequel les routes sont testées
     // il faut toujours déclarer les routes les plus générales en premier, et de plus en plus précis
