@@ -3,16 +3,13 @@
     <!-- titre et bouton ajouter -->
     <div class="row border-bottom pb-3 mb-3">
       <div class="col">
-        <h1 v-if="isNewBill" class="h3">
-          <i class="fa-solid fa-angle-down me-2" />Créer une facture
-        </h1>
-        <h1 v-else class="h3"><i class="fa-solid fa-angle-down me-2" />Editer une facture</h1>
+        <h1 class="h3"><i class="fa-solid fa-angle-down me-2" />Liste des factures</h1>
       </div>
-      <div v-if="!isNewBill" class="col text-end">
-        <button @click="deleteBill(bill)" class="btn btn-outline-danger">
-          <i class="fa-solid fa-trash me-2" />
-          Supprimer la facture
-        </button>
+      <div class="col text-end">
+        <router-link to="/edit-bill/-1" class="btn btn-outline-primary">
+          <i class="fa-solid fa-plus-circle me-2" />
+          Ajouter une facture
+        </router-link>
       </div>
     </div>
 

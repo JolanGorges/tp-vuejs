@@ -26,7 +26,7 @@ export const useClientStore = defineStore('client', {
           codePostal: '',
           ville: '',
           pays: '',
-          dateAjout: ''
+          dateAjout: new Date().toISOString().split('T')[0]
         }
       } else {
         const response = await this.$http.get('/clients/' + id)

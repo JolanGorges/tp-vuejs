@@ -34,6 +34,16 @@ const router = createRouter({
       props: true, //sert à récupérer les paramètres sous la forme de props dans le composant de la vue
       name: 'edit-bill',
       component: () => import('../views/CreateEditBillView.vue')
+    },
+    {
+      path: '/edit-client',
+      redirect: '/create-client'
+    },
+    {
+      path: '/edit-client/:id',
+      props: true,
+      name: 'edit-client',
+      component: () => import('../views/CreateEditClientView.vue')
     }
     // {
     //   path: '/about',

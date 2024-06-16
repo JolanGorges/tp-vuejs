@@ -5,7 +5,7 @@
         <h1 class="h3"><i class="fa-solid fa-angle-down me-2" />Liste des clients</h1>
       </div>
       <div class="col text-end">
-        <router-link to="/edit-bill/-1" class="btn btn-outline-primary">
+        <router-link to="/edit-client/-1" class="btn btn-outline-primary">
           <i class="fa-solid fa-plus-circle me-2" />
           Ajouter un client
         </router-link>
@@ -42,9 +42,15 @@ export default {
     await this.getAllClients()
   },
   methods: {
-    ...mapActions(useClientStore, ['getAllClients']),
+    ...mapActions(useClientStore, ['getAllClients', 'onDeleteClient']),
     onEditClient(client) {
       console.log('edit client with id: ', client.id)
+      this.$router.push({
+        name: 'edit-client',
+        params: {
+          id: client.id
+        }
+      })
     }
   }
 }
