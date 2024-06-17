@@ -1,9 +1,9 @@
-import { bills } from '@/seeds/bills.js'
+// import { bills } from '@/seeds/bills.js'
 import { defineStore } from 'pinia'
 // on a installé la librairie uuid avec npm i uuid afin de pouvoir l'utiliser ici
 export const useBillStore = defineStore('bill', {
   state: () => ({
-    bills,
+    bills: null,
     bill: null
   }),
   getters: {},
