@@ -3,13 +3,16 @@
     <!-- titre et bouton ajouter -->
     <div class="row border-bottom pb-3 mb-3">
       <div class="col">
-        <h1 class="h3"><i class="fa-solid fa-angle-down me-2" />Liste des factures</h1>
+        <h1 v-if="isNewBill" class="h3">
+          <i class="fa-solid fa-angle-down me-2" />Créer une facture
+        </h1>
+        <h1 v-else class="h3"><i class="fa-solid fa-angle-down me-2" />Editer une facture</h1>
       </div>
-      <div class="col text-end">
-        <router-link to="/edit-bill/-1" class="btn btn-outline-primary">
-          <i class="fa-solid fa-plus-circle me-2" />
-          Ajouter une facture
-        </router-link>
+      <div v-if="!isNewBill" class="col text-end">
+        <button @click="deleteBill(bill)" class="btn btn-outline-danger">
+          <i class="fa-solid fa-trash me-2" />
+          Supprimer la facture
+        </button>
       </div>
     </div>
 
@@ -51,8 +54,8 @@
             :class="{ 'is-invalid': !bill.client }"
           >
             <option value="">Veuillez choisir un client</option>
-            <option v-for="client in clients" :value="client" :key="client.idclient">
-              {{ client.firstName }} {{ client.lastName }}
+            <option v-for="client in clients" :value="client.id" :key="client.id">
+              {{ client.prenom }} {{ client.nom }}
             </option>
           </select>
           <label for="client" class="form-label">Client</label>
@@ -285,11 +288,11 @@
 <script>
 // import PrestationTableRow from '@/components/TableList/PrestationTableRow.vue'
 import TableList from '@/components/TableList/TableList.vue'
-import { clients } from '@/seeds/clients.js'
+import { useClientStore } from '@/stores/client'
 // on importe le store
 import { useBillStore } from '@/stores/bill.js'
 // on importe les actions de pinia
-import { mapActions, mapWritableState } from 'pinia'
+import { mapActions, mapWritableState, mapState } from 'pinia'
 
 const prestationInterface = {
   description: '',
@@ -308,13 +311,9 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      clients
-    }
-  },
   computed: {
     ...mapWritableState(useBillStore, ['bill']),
+    ...mapState(useClientStore, ['clients']),
 
     // test si c'est une nouvelle facture ou si on édite une facture existante
     isNewBill() {
@@ -339,14 +338,15 @@ export default {
       }
     }
   },
-  mounted() {
+  async mounted() {
     // charge les données de la facture à éditer
     this.setBill(this.id)
+    await this.getAllClients()
   },
   methods: {
     // on déclare l'action ou les actions du store que l'on souhaite utiliser
     ...mapActions(useBillStore, ['onDeleteBill', 'onUpdateBill', 'onCreateBill', 'setBill']),
-
+    ...mapActions(useClientStore, ['getAllClients']),
     onAddPrestation(index) {
       // ajout d'une prestation sous l'élément courant dans le tableau
       this.bill.prestations.splice(index, 0, { ...prestationInterface })

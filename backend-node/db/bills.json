@@ -1,1 +1,38 @@
-[{"id":3,"billnum":20945321,"description":"Création de site internet et hébergement","date":"2024-03-31","client":{"idclient":3,"firstName":"Luc","lastName":"Skywalker","companyName":"Ordre des Jedi"},"prestations":[{"description":"Etude graphique UX","qty":2,"price":450},{"description":"Création d’un site Wordpress","qty":5,"price":450},{"description":"Hébergement annuel","qty":1,"price":250}],"discount":0,"paid":0,"totalHT":3400,"tva":20,"totalTTC":4080},{"id":"cc209912-3092-4110-ac96-20d5929c9b8f","billnum":"12I3492930","description":"Création de l'application de factures","date":"2024-06-14","client":{"idclient":3,"firstName":"Luc","lastName":"Skywalker","companyName":"Ordre des Jedi"},"prestations":[{"description":"fin de la création de l'application bills","qty":1,"price":4000}],"discount":0,"paid":0,"totalHT":4000,"tva":20,"totalTTC":4800}]
+[
+  {
+    "id": 3,
+    "billnum": 20945321,
+    "description": "Création de site internet et hébergement",
+    "date": "2024-03-31",
+    "client": "aa5dc72c-53a2-44a5-9464-82332ce58e48",
+    "prestations": [
+      { "description": "Etude graphique UX", "qty": 2, "price": 450 },
+      { "description": "Création d’un site Wordpress", "qty": 5, "price": 450 },
+      { "description": "Hébergement annuel", "qty": 1, "price": 250 }
+    ],
+    "discount": 0,
+    "paid": 0,
+    "totalHT": 3400,
+    "tva": 20,
+    "totalTTC": 4080
+  },
+  {
+    "id": "cc209912-3092-4110-ac96-20d5929c9b8f",
+    "billnum": "12I3492930",
+    "description": "Création de l'application de factures",
+    "date": "2024-06-14",
+    "client": "b5c1b3b4-1b3b-4b3b-8b3b-3b3b3b3b3b3b",
+    "prestations": [
+      {
+        "description": "fin de la création de l'application bills",
+        "qty": 1,
+        "price": 4000
+      }
+    ],
+    "discount": 0,
+    "paid": 0,
+    "totalHT": 4000,
+    "tva": 20,
+    "totalTTC": 4800
+  }
+]
