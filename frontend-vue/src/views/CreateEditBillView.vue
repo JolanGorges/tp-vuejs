@@ -50,7 +50,7 @@
             id="client"
             class="form-control"
             placeholder="Client"
-            v-model="bill.client"
+            v-model="bill.client.id"
             :class="{ 'is-invalid': !bill.client }"
           >
             <option value="">Veuillez choisir un client</option>
