@@ -34,13 +34,13 @@ module.exports = {
     }
   },
   postOne: (req, res) => {
+    console.log(req.body);
     try {
       const data = fs.readFileSync(
         path.resolve(__dirname, "../db/clients.json")
       );
       const clients = JSON.parse(data);
-      const newClient = req.body;
-      newClient.id = uuidv4();
+      const newClient = { id: uuidv4(), ...req.body };
       clients.push(newClient);
       fs.writeFileSync(
         path.resolve(__dirname, "../db/clients.json"),
@@ -59,20 +59,22 @@ module.exports = {
       );
       let clients = JSON.parse(data);
       const id = req.params.id;
-      const client = clients.find((client) => client.id == id);
-      if (client) {
-        const updatedClient = { ...client, ...req.body };
-        clients = clients.map((client) =>
-          client.id == id ? updatedClient : client
-        );
-        fs.writeFileSync(
-          path.resolve(__dirname, "../db/clients.json"),
-          JSON.stringify(clients)
-        );
-        res.json(updatedClient);
+      let clientIndex = clients.findIndex((client) => client.id == id);
+      if (clientIndex !== -1) {
+        clients[clientIndex] = {
+          ...clients[clientIndex],
+          ...req.body,
+        };
       } else {
         res.sendStatus(404);
+        return;
       }
+
+      fs.writeFileSync(
+        path.resolve(__dirname, "../db/clients.json"),
+        JSON.stringify(clients)
+      );
+      res.json(clients[clientIndex]);
     } catch (err) {
       res.sendStatus(500);
       throw err;
@@ -85,17 +87,21 @@ module.exports = {
       );
       let clients = JSON.parse(data);
       const id = req.params.id;
-      const client = clients.find((client) => client.id == id);
-      if (client) {
-        clients = clients.filter((client) => client.id != id);
-        fs.writeFileSync(
-          path.resolve(__dirname, "../db/clients.json"),
-          JSON.stringify(clients)
-        );
-        res.json(client);
-      } else {
+
+      const clientIndex = clients.findIndex((client) => client.id == id);
+      if (clientIndex === -1) {
         res.sendStatus(404);
+        return;
       }
+
+      clients.splice(clientIndex, 1);
+
+      fs.writeFileSync(
+        path.resolve(__dirname, "../db/clients.json"),
+        JSON.stringify(clients)
+      );
+
+      res.sendStatus(200);
     } catch (err) {
       res.sendStatus(500);
       throw err;
