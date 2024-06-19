@@ -8,10 +8,14 @@
         </h1>
         <h1 v-else class="h3"><i class="fa-solid fa-angle-down me-2" />Editer une facture</h1>
       </div>
-      <div v-if="!isNewBill" class="col text-end">
-        <button @click="deleteBill(bill)" class="btn btn-outline-danger">
+      <div class="col text-end">
+        <button v-if="!isNewBill" @click="deleteBill(bill)" class="btn btn-outline-danger me-2">
           <i class="fa-solid fa-trash me-2" />
           Supprimer la facture
+        </button>
+        <button @click="$router.back()" class="btn btn-outline-primary" to="/bills">
+          <i class="fa-solid fa-chevron-left me-2"></i>
+          Retour
         </button>
       </div>
     </div>
@@ -379,7 +383,7 @@ export default {
       }
 
       // puis je redirige l'utilisateur vers la page de liste
-      this.$router.push({ path: '/bills' })
+      this.$router.back()
     },
 
     // suppression de la bill
@@ -387,7 +391,7 @@ export default {
       // j'appelle la fonction qui vient du store stores/bills.js onDeleteBill() déclarée dans les actions du store
       this.onDeleteBill(bill)
       // puis je redirige l'utilisateur vers la page de liste
-      this.$router.push({ path: '/bills' })
+      this.$router.back()
     }
   },
   watch: {

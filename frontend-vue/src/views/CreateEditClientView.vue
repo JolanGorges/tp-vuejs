@@ -7,10 +7,18 @@
         </h1>
         <h1 v-else class="h3"><i class="fa-solid fa-angle-down me-2" />Editer un client</h1>
       </div>
-      <div v-if="!isNewClient" class="col text-end">
-        <button @click="deleteClient(client)" class="btn btn-outline-danger">
+      <div class="col text-end">
+        <button
+          v-if="!isNewClient"
+          @click="deleteClient(client)"
+          class="btn btn-outline-danger me-2"
+        >
           <i class="fa-solid fa-trash me-2" />
           Supprimer le client
+        </button>
+        <button @click="$router.back()" class="btn btn-outline-primary" to="/clients">
+          <i class="fa-solid fa-chevron-left me-2"></i>
+          Retour
         </button>
       </div>
     </div>
@@ -243,11 +251,11 @@ export default {
       } else {
         this.onUpdateClient(this.client)
       }
-      this.$router.push({ path: '/clients' })
+      this.$router.back()
     },
     deleteClient() {
       this.onDeleteClient(this.client)
-      this.$router.push({ path: '/clients' })
+      this.$router.back()
     }
   }
 }
