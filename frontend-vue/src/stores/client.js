@@ -15,18 +15,18 @@ export const useClientStore = defineStore('client', {
       if (id == '-1') {
         this.client = {
           id: '-1',
-          prenom: '',
-          nom: '',
-          fonction: '',
-          telephone: '',
+          firstName: '',
+          lastName: '',
+          jobTitle: '',
+          phoneNumber: '',
           email: '',
-          entreprise: '',
-          adresse1: '',
-          adresse2: '',
-          codePostal: '',
-          ville: '',
-          pays: '',
-          dateAjout: new Date().toISOString().split('T')[0]
+          company: '',
+          address1: '',
+          address2: '',
+          zipCode: '',
+          city: '',
+          country: '',
+          dateAdded: new Date().toISOString().split('T')[0]
         }
       } else {
         const response = await this.$http.get('/clients/' + id)

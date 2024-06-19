@@ -5,18 +5,18 @@ function createClient() {
   const countries = ["France", "Belgique", "Suisse"];
   return {
     id: fakerFR.string.uuid(),
-    prenom: fakerFR.person.firstName(),
-    nom: fakerFR.person.lastName(),
-    fonction: fakerFR.person.jobTitle(),
-    telephone: fakerFR.phone.number(),
+    firstName: fakerFR.person.firstName(),
+    lastName: fakerFR.person.lastName(),
+    jobTitle: fakerFR.person.jobTitle(),
+    phoneNumber: fakerFR.phone.number(),
     email: fakerFR.internet.email(),
-    entreprise: fakerFR.company.name(),
-    adresse1: fakerFR.location.streetAddress(),
-    adresse2: "",
-    codePostal: fakerFR.location.zipCode(),
-    ville: fakerFR.location.city(),
-    pays: fakerFR.helpers.arrayElement(countries),
-    dateAjout: fakerFR.date
+    company: fakerFR.company.name(),
+    address1: fakerFR.location.streetAddress(),
+    address2: "",
+    zipCode: fakerFR.location.zipCode(),
+    city: fakerFR.location.city(),
+    country: fakerFR.helpers.arrayElement(countries),
+    dateAdded: fakerFR.date
       .between({ from: "2019-01-01", to: "2023-06-23" })
       .toISOString()
       .split("T")[0],
@@ -50,8 +50,8 @@ function createBill() {
       .split("T")[0],
     client: {
       id: client.id,
-      firstName: client.prenom,
-      lastName: client.nom,
+      firstName: client.firstName,
+      lastName: client.lastName,
     },
     prestations,
     discount: 0,
@@ -66,7 +66,7 @@ const clients = fakerFR.helpers
   .multiple(createClient, {
     count: { min: 15, max: 30 },
   })
-  .sort((a, b) => new Date(b.dateAjout) - new Date(a.dateAjout));
+  .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
 
 const bills = fakerFR.helpers
   .multiple(createBill, {

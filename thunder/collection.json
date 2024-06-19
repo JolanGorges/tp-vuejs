@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "BillApp",
     "collectionId": "a87050a3-f0ea-4b4a-8df1-d1ed3beca361",
-    "dateExported": "2024-06-19T08:20:45.525Z",
+    "dateExported": "2024-06-19T14:02:01.094Z",
     "version": "1.2",
     "folders": [
         {
@@ -61,7 +61,7 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-06-14T12:06:07.081Z",
-            "modified": "2024-06-19T08:07:17.931Z",
+            "modified": "2024-06-19T13:16:27.799Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -76,7 +76,7 @@
             ],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"billnum\": 97515,\n  \"description\": \"Fantastique Plastique Thon\",\n  \"date\": \"2023-07-02\",\n  \"client\": {\n    \"id\": \"909f7512-2e26-45b8-96e5-0b83e3438503\",\n    \"firstName\": \"Félicie\",\n    \"lastName\": \"Noel\"\n  },\n  \"prestations\": [\n    {\n      \"description\": \"Sans marque Acier Savon\",\n      \"qty\": 2,\n      \"price\": 2113\n    },\n    {\n      \"description\": \"Sans marque Béton Poisson\",\n      \"qty\": 2,\n      \"price\": 1091\n    },\n    {\n      \"description\": \"Incroyable Bronze Fromage\",\n      \"qty\": 2,\n      \"price\": 3209\n    }\n  ],\n  \"discount\": 0,\n  \"paid\": 10882,\n  \"totalHT\": 12826,\n  \"tva\": 20,\n  \"totalTTC\": 4509\n}",
+                "raw": "{\n \n  \"billnum\": 97515,\n  \"description\": \"Fantastique Plastique Thon\",\n  \"date\": \"2023-07-02\",\n  \"client\": {\n    \"id\": \"909f7512-2e26-45b8-96e5-0b83e3438503\",\n    \"firstName\": \"Félicie\",\n    \"lastName\": \"Noel\"\n  },\n  \"prestations\": [\n    {\n      \"description\": \"Sans marque Acier Savon\",\n      \"qty\": 2,\n      \"price\": 2113\n    },\n    {\n      \"description\": \"Sans marque Béton Poisson\",\n      \"qty\": 2,\n      \"price\": 1091\n    },\n    {\n      \"description\": \"Incroyable Bronze Fromage\",\n      \"qty\": 2,\n      \"price\": 3209\n    }\n  ],\n  \"discount\": 0,\n  \"paid\": 10882,\n  \"totalHT\": 12826,\n  \"tva\": 20,\n  \"totalTTC\": 4509\n}",
                 "form": []
             }
         },
@@ -163,7 +163,7 @@
             "method": "POST",
             "sortNum": 90000,
             "created": "2024-06-19T07:32:32.534Z",
-            "modified": "2024-06-19T08:13:26.216Z",
+            "modified": "2024-06-19T14:01:54.345Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -178,7 +178,7 @@
             ],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"prenom\": \"testtest\",\n  \"nom\": \"Riviere\",\n  \"fonction\": \"Consultant des interactions interne\",\n  \"telephone\": \"+33 378317005\",\n  \"email\": \"Tonnin_Jacquet@hotmail.fr\",\n  \"entreprise\": \"Vincent SAS\",\n  \"adresse1\": \"9112 Impasse de Provence\",\n  \"adresse2\": \"\",\n  \"codePostal\": \"48446\",\n  \"ville\": \"Metz\",\n  \"pays\": \"Suisse\",\n  \"dateAjout\": \"2022-02-02\"\n}",
+                "raw": "{\n  \"firstName\": \"testest\",\n  \"lastName\": \"Riviere\",\n  \"jobTitle\": \"Consultant des interactions interne\",\n  \"phoneNumber\": \"+33 378317005\",\n  \"email\": \"Tonnin_Jacquet@hotmail.fr\",\n  \"company\": \"Vincent SAS\",\n  \"address1\": \"9112 Impasse de Provence\",\n  \"address2\": \"\",\n  \"zipCode\": \"48446\",\n  \"city\": \"Metz\",\n  \"country\": \"Suisse\",\n  \"dateAdded\": \"2022-02-02\"\n}",
                 "form": []
             }
         },
@@ -226,5 +226,5 @@
             ]
         }
     ],
-    "ref": "RD6Z8ZxpByXb7pcUlkZKJzOdj7FXVPYMvpWi0nc1oNnQIL-xKcjE7EwIgHzrs2BVl3sviYm4ZTJvRLxJRfXSZQ"
+    "ref": "RD6Z8ZxpByXb7pcUlkZKJzOdj7FXVPYMvpWi0nc1oNnbbq5HvSqMiwf9h_-NM0YxGUmSAdxKKGxAvV1_sh3S_g"
 }

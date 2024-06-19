@@ -32,8 +32,8 @@
                 type="text"
                 class="form-control"
                 id="firstName"
-                v-model="client.prenom"
-                :class="{ 'is-invalid': !client.prenom }"
+                v-model="client.firstName"
+                :class="{ 'is-invalid': !client.firstName }"
               />
               <label for="firstName" class="form-label">Prénom :</label>
             </div>
@@ -44,8 +44,8 @@
                 type="text"
                 class="form-control"
                 id="lastName"
-                v-model="client.nom"
-                :class="{ 'is-invalid': !client.nom }"
+                v-model="client.lastName"
+                :class="{ 'is-invalid': !client.lastName }"
               />
               <label for="lastName" class="form-label">Nom :</label>
             </div>
@@ -58,8 +58,8 @@
                 type="text"
                 class="form-control"
                 id="jobTitle"
-                v-model="client.fonction"
-                :class="{ 'is-invalid': !client.fonction }"
+                v-model="client.jobTitle"
+                :class="{ 'is-invalid': !client.jobTitle }"
               />
               <label for="jobTitle" class="form-label">Fonction :</label>
             </div>
@@ -70,8 +70,8 @@
                 type="tel"
                 class="form-control"
                 id="phoneNumber"
-                v-model="client.telephone"
-                :class="{ 'is-invalid': !client.telephone }"
+                v-model="client.phoneNumber"
+                :class="{ 'is-invalid': !client.phoneNumber }"
               />
               <label for="phoneNumber" class="form-label">Téléphone :</label>
             </div>
@@ -98,8 +98,8 @@
                 type="text"
                 class="form-control"
                 id="company"
-                v-model="client.entreprise"
-                :class="{ 'is-invalid': !client.entreprise }"
+                v-model="client.company"
+                :class="{ 'is-invalid': !client.company }"
               />
               <label for="company" class="form-label">Entreprise :</label>
             </div>
@@ -113,8 +113,8 @@
                 type="text"
                 class="form-control"
                 id="address1"
-                v-model="client.adresse1"
-                :class="{ 'is-invalid': !client.adresse1 }"
+                v-model="client.address1"
+                :class="{ 'is-invalid': !client.address1 }"
               />
               <label for="address1" class="form-label">Adresse 1 :</label>
             </div>
@@ -123,7 +123,7 @@
         <div class="row mb-3">
           <div class="col-md">
             <div class="form-floating">
-              <input type="text" class="form-control" id="address2" v-model="client.adresse2" />
+              <input type="text" class="form-control" id="address2" v-model="client.address2" />
               <label for="address2" class="form-label">Adresse 2 :</label>
             </div>
           </div>
@@ -135,8 +135,8 @@
                 type="text"
                 class="form-control"
                 id="zip"
-                v-model="client.codePostal"
-                :class="{ 'is-invalid': !client.codePostal }"
+                v-model="client.zipCode"
+                :class="{ 'is-invalid': !client.zipCode }"
               />
               <label for="zip" class="form-label">Code postal :</label>
             </div>
@@ -147,8 +147,8 @@
                 type="text"
                 class="form-control"
                 id="city"
-                v-model="client.ville"
-                :class="{ 'is-invalid': !client.ville }"
+                v-model="client.city"
+                :class="{ 'is-invalid': !client.city }"
               />
               <label for="city" class="form-label">Ville :</label>
             </div>
@@ -160,8 +160,8 @@
               <select
                 class="form-select"
                 id="country"
-                v-model="client.pays"
-                :class="{ 'is-invalid': !client.pays }"
+                v-model="client.country"
+                :class="{ 'is-invalid': !client.country }"
               >
                 <option value="France">France</option>
                 <option value="Belgique">Belgique</option>
@@ -179,8 +179,8 @@
             format="yyyy-MM-dd"
             class="form-control"
             id="date"
-            v-model="client.dateAjout"
-            :class="{ 'is-invalid': !client.dateAjout }"
+            v-model="client.dateAdded"
+            :class="{ 'is-invalid': !client.dateAdded }"
           />
           <label for="date" class="form-label">Date d'ajout :</label>
         </div>
@@ -220,17 +220,17 @@ export default {
     formInvalid() {
       return (
         !this.client ||
-        !this.client.prenom ||
-        !this.client.nom ||
-        !this.client.fonction ||
-        !this.client.telephone ||
+        !this.client.firstName ||
+        !this.client.lastName ||
+        !this.client.jobTitle ||
+        !this.client.phoneNumber ||
         !this.client.email ||
-        !this.client.entreprise ||
-        !this.client.adresse1 ||
-        !this.client.codePostal ||
-        !this.client.ville ||
-        !this.client.pays ||
-        !this.client.dateAjout
+        !this.client.company ||
+        !this.client.address1 ||
+        !this.client.zipCode ||
+        !this.client.city ||
+        !this.client.country ||
+        !this.client.dateAdded
       )
     }
   },

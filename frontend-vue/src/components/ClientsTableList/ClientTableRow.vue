@@ -1,10 +1,10 @@
 <template>
   <tr>
     <td class="align-middle" scope="row">
-      <i class="fa-regular fa-user me-2" />{{ client.prenom }} {{ client.nom }}
+      <i class="fa-regular fa-user me-2" />{{ client.firstName }} {{ client.lastName }}
     </td>
-    <td class="align-middle">{{ client.entreprise }}</td>
-    <td class="align-middle text-end">{{ client.dateAjout }}</td>
+    <td class="align-middle">{{ client.company }}</td>
+    <td class="align-middle text-end">{{ client.dateAdded }}</td>
     <td class="align-middle d-flex gap-2 justify-content-end align-items-center">
       <button @click="onDelete()" class="btn btn-outline-danger">
         <i class="fa-solid fa-trash me-2" />Supprimer
@@ -27,7 +27,7 @@ export default {
   emits: ['delete', 'edit'],
   computed: {
     clientName() {
-      return this.client.prenom + ' ' + this.client.nom
+      return this.client.firstName + ' ' + this.client.lastName
     }
   },
   methods: {

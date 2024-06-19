@@ -25,8 +25,8 @@ export const useBillStore = defineStore('bill', {
           date: '',
           client: {
             id: '',
-            prenom: '',
-            nom: ''
+            firstName: '',
+            lastName: ''
           },
           prestations: [
             {

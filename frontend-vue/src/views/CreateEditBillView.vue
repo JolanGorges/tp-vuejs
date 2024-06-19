@@ -59,7 +59,7 @@
           >
             <option value="">Veuillez choisir un client</option>
             <option v-for="client in clients" :value="client.id" :key="client.id">
-              {{ client.prenom }} {{ client.nom }}
+              {{ client.firstName }} {{ client.lastName }}
             </option>
           </select>
           <label for="client" class="form-label">Client</label>
@@ -347,8 +347,8 @@ export default {
         this.bill.client.id = value
         const selected = this.clients.find((client) => client.id === value)
         if (selected) {
-          this.bill.client.prenom = selected.prenom
-          this.bill.client.nom = selected.nom
+          this.bill.client.firstName = selected.firstName
+          this.bill.client.lastName = selected.lastName
         }
       }
     }

@@ -96,9 +96,9 @@
               </thead>
               <tbody>
                 <tr v-for="client in clients.slice(0, 10)" class="align-middle">
-                  <td>{{ client.prenom }} {{ client.nom }}</td>
-                  <td>{{ client.entreprise }}</td>
-                  <td class="text-end">{{ client.dateAjout }}</td>
+                  <td>{{ client.firstName }} {{ client.lastName }}</td>
+                  <td>{{ client.company }}</td>
+                  <td class="text-end">{{ client.dateAdded }}</td>
                   <td class="text-end">
                     <button @click="onEditClient(client)" class="btn btn-outline-info">
                       <i class="fa-solid fa-pen me-2" />Editer
