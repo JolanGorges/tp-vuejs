@@ -31,9 +31,6 @@
         @delete="onDeleteBill($event)"
       />
     </TableList>
-    <pre>
-      {{ bills }}
-    </pre>
 
     <!-- on peut passer des paramètres dans les router-links : -->
 
@@ -75,7 +72,6 @@ export default {
   methods: {
     ...mapActions(useBillStore, ['onDeleteBill', 'getAllBills']),
     onEditBill(bill) {
-      console.log('edit bill with id: ', bill.id)
       // je change de page programmatiquement avec le $router
       this.$router.push({
         name: 'edit-bill',

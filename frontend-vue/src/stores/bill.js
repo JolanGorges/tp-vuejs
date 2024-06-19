@@ -23,7 +23,11 @@ export const useBillStore = defineStore('bill', {
           billnum: '',
           description: '',
           date: '',
-          client: {},
+          client: {
+            id: '',
+            prenom: '',
+            nom: ''
+          },
           prestations: [
             {
               description: '',
@@ -46,7 +50,6 @@ export const useBillStore = defineStore('bill', {
     // recherche la facture correspondante dans le store, et enregistre les modifications
     async onUpdateBill(bill) {
       const response = await this.$http.patch('/bills/' + bill.id, bill)
-      console.log(response.data)
       // je vidange la donnée d'édition d'une bill
       this.bill = null
       await this.getAllBills()
@@ -56,7 +59,6 @@ export const useBillStore = defineStore('bill', {
     async onCreateBill(bill) {
       // j'ajoute une nouvelle facture dans le tableau des bills, en ajoutant au passage un id unique grâce à la méthode importée uuidv4() depuis le package uuid
       const response = await this.$http.post('/bills', bill)
-      console.log(response.data)
       this.bill = null
       await this.getAllBills()
     },
@@ -64,7 +66,6 @@ export const useBillStore = defineStore('bill', {
     async onDeleteBill(bill) {
       // on recherche l'index de la facture à supprimer, et on retourne un nouveau tableau de bills sans celle-ci
       const response = await this.$http.delete('/bills/' + bill.id)
-      console.log(response.data)
       // pour raffraichir la liste des factures, je relance la méthode getAllBills()
       await this.getAllBills()
     }

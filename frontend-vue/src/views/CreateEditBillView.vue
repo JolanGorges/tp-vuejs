@@ -54,7 +54,7 @@
             id="client"
             class="form-control"
             placeholder="Client"
-            v-model="bill.client.id"
+            v-model="selectedClient"
             :class="{ 'is-invalid': !bill.client }"
           >
             <option value="">Veuillez choisir un client</option>
@@ -284,8 +284,6 @@
         <i class="fa-solid fa-save me-2" />Enregistrer
       </button>
     </p>
-    <!-- 1ère manière de récupérer des paramètres de la route : -->
-    <pre>{{ bill }}</pre>
   </div>
 </template>
 
@@ -338,6 +336,19 @@ export default {
         if (this.bill) {
           const prestation = this.bill.prestations[index]
           return prestation.qty * prestation.price
+        }
+      }
+    },
+    selectedClient: {
+      get() {
+        return this.bill.client.id
+      },
+      set(value) {
+        this.bill.client.id = value
+        const selected = this.clients.find((client) => client.id === value)
+        if (selected) {
+          this.bill.client.prenom = selected.prenom
+          this.bill.client.nom = selected.nom
         }
       }
     }

@@ -44,7 +44,6 @@ export default {
   methods: {
     ...mapActions(useClientStore, ['getAllClients', 'onDeleteClient']),
     onEditClient(client) {
-      console.log('edit client with id: ', client.id)
       this.$router.push({
         name: 'edit-client',
         params: {

@@ -199,7 +199,6 @@
         </button>
       </div>
     </div>
-    <pre>{{ client }}</pre>
   </div>
 </template>
 

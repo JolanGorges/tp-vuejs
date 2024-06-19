@@ -34,13 +34,13 @@ module.exports = {
     }
   },
   postOne: (req, res) => {
-    console.log(req.body);
     try {
       const data = fs.readFileSync(
         path.resolve(__dirname, "../db/clients.json")
       );
       const clients = JSON.parse(data);
-      const newClient = { id: uuidv4(), ...req.body };
+      const { id, ...restBody } = req.body;
+      const newClient = { id: uuidv4(), ...restBody };
       clients.push(newClient);
       fs.writeFileSync(
         path.resolve(__dirname, "../db/clients.json"),

@@ -59,8 +59,10 @@ module.exports = {
       const data = fs.readFileSync(path.resolve(__dirname, "../db/bills.json"));
       // on convertit le json en data
       const bills = JSON.parse(data);
+      // on suppose que l'id est passé dans le body, on le retire pour ne pas l'insérer dans le tableau
+      const { id, ...restBody } = req.body;
       // on insère la nouvelle facture avec un push, au passage, on crée un identifiant unique
-      const newBill = { id: uuid(), ...req.body };
+      const newBill = { id: uuid(), ...restBody };
       bills.push(newBill);
 
       // on écrit le nouveau fichier json avec la donnée à jour :

@@ -35,19 +35,16 @@ export const useClientStore = defineStore('client', {
     },
     async onUpdateClient(client) {
       const response = await this.$http.patch('/clients/' + client.id, client)
-      console.log(response.data)
       this.client = null
       await this.getAllClients()
     },
     async onCreateClient(client) {
       const response = await this.$http.post('/clients', client)
-      console.log(response.data)
       this.client = null
       await this.getAllClients()
     },
     async onDeleteClient(client) {
       const response = await this.$http.delete('/clients/' + client.id)
-      console.log(response.data)
       this.client = null
       await this.getAllClients()
     }
